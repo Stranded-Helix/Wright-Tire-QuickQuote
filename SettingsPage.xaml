@@ -1,0 +1,116 @@
+﻿<Page x:Class="WrightTireEstimator.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WrightTireEstimator"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SettingsPage">
+
+    <Grid Margin="4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        
+            <!--Rates Column-->
+            <Grid Grid.Column="0" Style="{StaticResource SettingsGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Labor Rates" FontWeight="Bold"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Lawn Install"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Passenger/LT Install"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Medium Truck Install"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Disposal" FontWeight="Bold"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Lawn Disposal"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Passenger/LT Disposal"/>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Medium Truck Disposal"/>
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Rates" FontWeight="Bold"/>
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="Tax Rate"/>
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="Service Fee Rate"/>
+                <!--TextBlocks for Rates-->
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LawnInstall}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PassengerInstall }"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MediumTruckInstall }"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LawnDisposal}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PassengerDisposal}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding MediumTruckDisposal}"/>
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding TaxRate}"/>
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding ServiceRate}" />
+            </Grid>
+
+
+        <!--Markup Rnages Column-->
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Markup Ranges" FontWeight="Bold"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--First Set of Markup-->
+                <TextBlock Text="Min" Grid.Column="0" Grid.Row="0"/>
+                <TextBlock Text="Max" Grid.Column="1" Grid.Row="0"/>
+                <TextBlock Text="Markup" Grid.Column="2" Grid.Row="0"/>
+                <TextBox Grid.Column="0" Grid.Row="1" Text="{Binding Markup1Min}"/>
+                <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Markup1Max}"/>
+                <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding Markup1Rate}"/>
+                <!--Second Set of Markup-->
+                <TextBlock Text="Min" Grid.Column="0" Grid.Row="2"/>
+                <TextBlock Text="Max" Grid.Column="1" Grid.Row="2"/>
+                <TextBlock Text="Markup" Grid.Column="2" Grid.Row="2"/>
+                <TextBox Grid.Column="0" Grid.Row="3" Text="{Binding Markup2Min}"/>
+                <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Markup2Max}"/>
+                <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Markup2Rate}"/>
+                <!--Third Set of Markup-->
+                <TextBlock Text="Min" Grid.Column="0" Grid.Row="4"/>
+                <TextBlock Text="Max" Grid.Column="1" Grid.Row="4"/>
+                <TextBlock Text="Markup" Grid.Column="2" Grid.Row="4"/>
+                <TextBox Grid.Column="0" Grid.Row="5" Text="{Binding Markup3Min}"/>
+                <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Markup3Max}"/>
+                <TextBox Grid.Column="2" Grid.Row="5" Text="{Binding Markup3Rate}"/>
+                <!--Universal Markup-->
+                <TextBlock Text="Universal Markup" Grid.Column="0" Grid.Row="6"/>
+                <TextBox Grid.Column="0" Grid.Row="7" Text="{Binding UniversalMarkup}"/>
+
+            </Grid>
+            <Grid VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Save" Style="{StaticResource SettingsPageButton}" Command="{Binding Save}"/>
+                <Button Grid.Column="1" Content="Cancel" Style="{StaticResource SettingsPageButton}" Command="{Binding Cancel}"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>
